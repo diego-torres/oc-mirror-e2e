@@ -1,11 +1,12 @@
 VERSION = $(shell cat VERSION)
 GALAXY_TOKEN := $(shell cat .galaxy-token)
 PUSH_IMAGE = registry.jharmison.com/ansible/oc-mirror-e2e
-RUNTIME = podman
+RUNTIME = docker
 ANSIBLE_TAGS =
 ANSIBLE_SKIP_TAGS =
 ANSIBLE_SCENARIO_VARS = scenario
 ANSIBLE_PLAYBOOKS = create test delete
+DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 .PHONY: all prereqs clean-prereqs collection publish ee ee-publish run clean realclean
 
